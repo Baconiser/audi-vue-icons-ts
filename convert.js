@@ -19,15 +19,23 @@ async function loadFiles() {
 
         for (var i = 0; i < svgs.length; i++) {
             const file = svgs[i];
+            const splittedName = file.replace(".svg", "").split("-");
+            const name = splittedName.map(capitalize).join("");
+            const size = splittedName.slice(-1).includes("large") ? 48 : 24;
+            let content = await fs.readFile(path.join("./svg", file), "utf-8");
+            content = content.replace(`width="${size}"`, ":width=\"size\"");
+            content = content.replace(`height="${size}"`, ":height=\"size\"");
 
-            const name = file.replace(".svg", "").split("-").map(capitalize).join("");
-            const content = await fs.readFile(path.join("./svg", file), "utf-8");
             const template = `<template>
 ${content}</template>
 <script lang="ts">
-	import { Component, Vue } from "vue-property-decorator";
+	import { Component, Prop, Vue } from "vue-property-decorator";
+	
 	@Component
-	export default class ${name} extends Vue {}
+	export default class ${name} extends Vue {
+		@Prop({default: ${size}}) width!:number;
+		@Prop({default: ${size}}) height!:number;
+	}
 </script> `;
             names.push(name);
             await fs.writeFile(path.join(out, `${name}.vue`), template);

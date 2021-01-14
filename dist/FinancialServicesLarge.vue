@@ -1,5 +1,5 @@
 <template>
-<svg width="48" height="48" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<svg :width="size" :height="size" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
         financial-services-large
     </title>
@@ -10,7 +10,11 @@
 </svg>
 </template>
 <script lang="ts">
-	import { Component, Vue } from "vue-property-decorator";
+	import { Component, Prop, Vue } from "vue-property-decorator";
+	
 	@Component
-	export default class FinancialServicesLarge extends Vue {}
+	export default class FinancialServicesLarge extends Vue {
+		@Prop({default: 48}) width!:number;
+		@Prop({default: 48}) height!:number;
+	}
 </script> 
