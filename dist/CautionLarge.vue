@@ -1,0 +1,13 @@
+<template>
+<svg width="48" height="48" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>
+        caution-large
+    </title>
+    <path d="M2.5,42.5 L23.5,4.5 L44.5,42.5 L2.5,42.5 Z M23.5,33 L23.5,37 M23.5,18 L23.5,29" stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd"/>
+</svg>
+</template>
+<script lang="ts">
+	import { Component, Vue } from "vue-property-decorator";
+	@Component
+	export default class CautionLarge extends Vue {}
+</script> 

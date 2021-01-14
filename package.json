@@ -1,0 +1,27 @@
+{
+  "name": "audi-vue-icons-ts",
+  "version": "3.10.3",
+  "description": "Audi Icons are sadly only available as SVGs, i converted them as vue+ts files",
+  "main": "convert.js",
+  "scripts": {
+    "build": "node convert.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Baconiser/audi-vue-icons-ts.git"
+  },
+  "keywords": [
+    "Audi",
+    "Icon",
+    "Vue",
+    "Icons",
+    "Typescript",
+    "TS"
+  ],
+  "author": "Michael Lebedew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Baconiser/audi-vue-icons-ts/issues"
+  },
+  "homepage": "https://github.com/Baconiser/audi-vue-icons-ts#readme"
+}
