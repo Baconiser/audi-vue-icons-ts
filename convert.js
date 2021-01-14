@@ -11,14 +11,17 @@ function capitalize(text) {
     return [text[0].toUpperCase(), text.substr(1, text.length)].join("");
 }
 
-const names = [];
-
 async function loadFiles() {
+    let names = [];
     try {
         const files = await fs.readdir("./svg");
-        files.filter(isSvg).forEach(async (file) => {
+        const svgs = files.filter(isSvg);
+
+        for (var i = 0; i < svgs.length; i++) {
+            const file = svgs[i];
+
             const name = file.replace(".svg", "").split("-").map(capitalize).join("");
-            const content = await fs.readFile(file, "utf-8");
+            const content = await fs.readFile(path.join("./svg", file), "utf-8");
             const template = `<template>
 ${content}</template>
 <script lang="ts">
@@ -26,12 +29,14 @@ ${content}</template>
 	@Component
 	export default class ${name} extends Vue {}
 </script> `;
-            await fs.writeFile(path.join(out, `${name}.vue`), template);
             names.push(name);
-        });
- 
+            await fs.writeFile(path.join(out, `${name}.vue`), template);
+        }
+        let index = "";
 
-
+        names.forEach(name => index += `import ${name} from './dist/${name}.vue';\n`);
+        index += `export { ${names.join(",\n")} }`;
+        await fs.writeFile("./index.ts", index);
     } catch (error) {
         console.error(error);
     }
