@@ -23,8 +23,8 @@ async function loadFiles() {
             const name = splittedName.map(capitalize).join("");
             const size = splittedName.slice(-1).includes("large") ? 48 : 24;
             let content = await fs.readFile(path.join("./svg", file), "utf-8");
-            content = content.replace(`width="${size}"`, ":width=\"size\"");
-            content = content.replace(`height="${size}"`, ":height=\"size\"");
+            content = content.replace(`width="${size}"`, ":width=\"width\"");
+            content = content.replace(`height="${size}"`, ":height=\"height\"");
 
             const template = `<template>
 ${content}</template>
