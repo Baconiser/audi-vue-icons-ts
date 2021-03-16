@@ -1,17 +1,18 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        work-large
+        {{title}}
     </title>
     <path d="M35.5,41.5 L27.5,41.5 L27.5,32.5 L21.5,32.5 L21.5,41.5 L13.5,41.5 L13.5,6.5 L35.5,6.5 L35.5,41.5 Z M17.5,10.5 L22.5,10.5 L22.5,15.5 L17.5,15.5 L17.5,10.5 Z M26.5,10.5 L31.5,10.5 L31.5,15.5 L26.5,15.5 L26.5,10.5 Z M17.5,21.5 L22.5,21.5 L22.5,26.5 L17.5,26.5 L17.5,21.5 Z M26.5,21.5 L31.5,21.5 L31.5,26.5 L26.5,26.5 L26.5,21.5 Z" stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd"/>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class WorkLarge extends Vue {
-		@Prop({default: 48}) width!:number;
-		@Prop({default: 48}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class WorkLarge extends Vue {
+                                    @Prop({default: 48}) width!:number;
+                                    @Prop({default: 48}) height!:number;
+                                    @Prop({default: 'work-large'}) title!:string;
+                                }
+                            </script> 

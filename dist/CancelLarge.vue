@@ -1,17 +1,18 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        cancel-large
+        {{title}}
     </title>
     <path d="M31.6,15.4 L15.4,31.6 M15.4,15.4 L31.7,31.7" stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd"/>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class CancelLarge extends Vue {
-		@Prop({default: 48}) width!:number;
-		@Prop({default: 48}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class CancelLarge extends Vue {
+                                    @Prop({default: 48}) width!:number;
+                                    @Prop({default: 48}) height!:number;
+                                    @Prop({default: 'cancel-large'}) title!:string;
+                                }
+                            </script> 

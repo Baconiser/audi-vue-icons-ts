@@ -1,7 +1,7 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        calendar-events-small
+        {{title}}
     </title>
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <path d="M5.5,19.5 L5.5,22.5 C5.5,23.1 5.9,23.5 6.5,23.5 L21.5,23.5 C22.1,23.5 22.5,23.1 22.5,22.5 L22.5,6 M0.5,3 L0.5,18.5 C0.5,19 0.9,19.5 1.5,19.5 L13.5,19.5 L18.5,14.5 L18.5,3 M18.5,14.5 L13.5,14.5 L13.5,19.5 M0,0.5 L19,0.5" stroke="currentColor"/>
@@ -9,12 +9,13 @@
     </g>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class CalendarEventsSmall extends Vue {
-		@Prop({default: 24}) width!:number;
-		@Prop({default: 24}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class CalendarEventsSmall extends Vue {
+                                    @Prop({default: 24}) width!:number;
+                                    @Prop({default: 24}) height!:number;
+                                    @Prop({default: 'calendar-events-small'}) title!:string;
+                                }
+                            </script> 

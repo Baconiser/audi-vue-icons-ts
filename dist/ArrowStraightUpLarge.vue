@@ -1,17 +1,18 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        arrow-straight-up-large
+        {{title}}
     </title>
     <path d="M17,12 L22.5,6.5 L28,12 M22.5,42 L22.5,6.5" stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd"/>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class ArrowStraightUpLarge extends Vue {
-		@Prop({default: 48}) width!:number;
-		@Prop({default: 48}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class ArrowStraightUpLarge extends Vue {
+                                    @Prop({default: 48}) width!:number;
+                                    @Prop({default: 48}) height!:number;
+                                    @Prop({default: 'arrow-straight-up-large'}) title!:string;
+                                }
+                            </script> 

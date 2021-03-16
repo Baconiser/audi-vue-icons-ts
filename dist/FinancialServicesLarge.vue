@@ -1,7 +1,7 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        financial-services-large
+        {{title}}
     </title>
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <path d="M28.09,30.5 L15,30.5 M30.589,27.976 L30.589,27.976 L42.094,24.506 C42.094,24.506 47.5,23.292 47.5,26.292 C47.5,28.833 45.076,29.822 43.409,30.585 C37.431,33.32 28.371,37.598 28.371,37.598 C28.371,37.598 23.833,39.5 19,39.5 L0.5,39.5 L0.5,30.5 C5.5,30.5 4.14,29.748 8.5,27.5 C11.095,26.162 14.381,25.5 17.417,25.5 L28.09,25.5 C29.4707119,25.5 30.59,26.6192881 30.59,28 C30.59,29.3807119 29.4707119,30.5 28.09,30.5 M36,21 C40.9705627,21 45,16.9705627 45,12 C45,7.02943725 40.9705627,3 36,3 C31.0294373,3 27,7.02943725 27,12 C27,16.9705627 31.0294373,21 36,21 Z" stroke="currentColor"/>
@@ -9,12 +9,13 @@
     </g>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class FinancialServicesLarge extends Vue {
-		@Prop({default: 48}) width!:number;
-		@Prop({default: 48}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class FinancialServicesLarge extends Vue {
+                                    @Prop({default: 48}) width!:number;
+                                    @Prop({default: 48}) height!:number;
+                                    @Prop({default: 'financial-services-large'}) title!:string;
+                                }
+                            </script> 

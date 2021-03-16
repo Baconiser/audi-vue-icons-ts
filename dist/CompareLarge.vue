@@ -1,7 +1,7 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        compare-large
+        {{title}}
     </title>
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <path stroke="currentColor" d="M24.5 9L24.5 38"/>
@@ -9,12 +9,13 @@
     </g>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class CompareLarge extends Vue {
-		@Prop({default: 48}) width!:number;
-		@Prop({default: 48}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class CompareLarge extends Vue {
+                                    @Prop({default: 48}) width!:number;
+                                    @Prop({default: 48}) height!:number;
+                                    @Prop({default: 'compare-large'}) title!:string;
+                                }
+                            </script> 

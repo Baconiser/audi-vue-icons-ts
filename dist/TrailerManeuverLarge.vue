@@ -1,7 +1,7 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        trailer-maneuver-large
+        {{title}}
     </title>
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <path d="M5,34.5 L16.5,34.5 L19.5,31.5 L34.5,31.5 L37.5,34.5 L39.5,34.5 C40.6045695,34.5 41.5,33.6045695 41.5,32.5 L41.5,19 L41.5,19 M11.5,25 L11.5,34.5 M22.5,39.5 C24.1568542,39.5 25.5,38.1568542 25.5,36.5 C25.5,34.8431458 24.1568542,33.5 22.5,33.5 C20.8431458,33.5 19.5,34.8431458 19.5,36.5 C19.5,38.1568542 20.8431458,39.5 22.5,39.5 Z M31.5,39.5 C33.1568542,39.5 34.5,38.1568542 34.5,36.5 C34.5,34.8431458 33.1568542,33.5 31.5,33.5 C29.8431458,33.5 28.5,34.8431458 28.5,36.5 C28.5,38.1568542 29.8431458,39.5 31.5,39.5 Z M22,14.5 L24.9765503,14.5 M16.9511854,20.1420102 L14.0033956,17.1927895 L16.9511854,20.1420102 Z M7.04462771,20.1399284 L10.020608,17.1687859 M12,22 C16.1421356,22 19.5,18.6421356 19.5,14.5 C19.5,10.3578644 16.1421356,7 12,7 C7.85786438,7 4.5,10.3578644 4.5,14.5 C4.5,18.6421356 7.85786438,22 12,22 Z M12,18.0108255 C13.5779564,18.0108255 14.5,16.9393969 14.5,15.3322541 C14.5,14.4393969 14.5,13.3679684 13.7857143,12.9036829 C13.2133738,12.5316619 10.7852601,12.5325498 10.2142857,12.9036829 C9.5,13.3679684 9.5,14.4393969 9.5,15.3322541 C9.5,16.9393969 10.4220436,18.0108255 12,18.0108255 Z M9.74486157,13.4659091 L4.52378688,13.4659091 M19.4462712,13.4659091 L14.2653458,13.4659091" stroke="currentColor"/>
@@ -9,12 +9,13 @@
     </g>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class TrailerManeuverLarge extends Vue {
-		@Prop({default: 48}) width!:number;
-		@Prop({default: 48}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class TrailerManeuverLarge extends Vue {
+                                    @Prop({default: 48}) width!:number;
+                                    @Prop({default: 48}) height!:number;
+                                    @Prop({default: 'trailer-maneuver-large'}) title!:string;
+                                }
+                            </script> 

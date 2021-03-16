@@ -1,7 +1,7 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        co2-emission-large
+        {{title}}
     </title>
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <path d="M12.9,14.6 C12.9,14.6 16.2,7.5 23.2,7.5 C30.2,7.5 31.8,12.5 31.8,12.5 L36,12.5 C38.4,12.5 43.4,13.1 43.4,19.6 C43.4,25.7 39.5,26.5 39.5,26.5 L39.5,29.3 C39.5,31.9 39.4,36.5 33.2,36.5 L29.9,36.5 C28.6,38.9 26.1,40.5 23.4,40.5 C20.6,40.5 18.1,39 16.6,36.6 C5.6,43.6 3,28.6 7.9,26.5 C5.4,25 4,22.2 4.4,19.3 C5.1,14.2 10.8,14.5 12.9,14.6 Z" stroke="currentColor"/>
@@ -9,12 +9,13 @@
     </g>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class Co2EmissionLarge extends Vue {
-		@Prop({default: 48}) width!:number;
-		@Prop({default: 48}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class Co2EmissionLarge extends Vue {
+                                    @Prop({default: 48}) width!:number;
+                                    @Prop({default: 48}) height!:number;
+                                    @Prop({default: 'co2-emission-large'}) title!:string;
+                                }
+                            </script> 

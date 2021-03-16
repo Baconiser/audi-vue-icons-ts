@@ -8,7 +8,7 @@ function isSvg(file) {
 const out = "./dist";
 
 function capitalize(text) {
-    return [text[0].toUpperCase(), text.substr(1, text.length)].join("");
+    return [ text[0].toUpperCase(), text.substr(1, text.length) ].join("");
 }
 
 async function loadFiles() {
@@ -19,24 +19,27 @@ async function loadFiles() {
 
         for (var i = 0; i < svgs.length; i++) {
             const file = svgs[i];
-            const splittedName = file.replace(".svg", "").split("-");
+            const filename = file.replace(".svg", "");
+            const splittedName = filename.split("-");
             const name = splittedName.map(capitalize).join("");
             const size = splittedName.slice(-1).includes("large") ? 48 : 24;
             let content = await fs.readFile(path.join("./svg", file), "utf-8");
             content = content.replace(`width="${size}"`, ":width=\"width\"");
             content = content.replace(`height="${size}"`, ":height=\"height\"");
+            content = content.replace(filename, "{{title}}");
 
             const template = `<template>
-${content}</template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class ${name} extends Vue {
-		@Prop({default: ${size}}) width!:number;
-		@Prop({default: ${size}}) height!:number;
-	}
-</script> `;
+                            ${content}</template>
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class ${name} extends Vue {
+                                    @Prop({default: ${size}}) width!:number;
+                                    @Prop({default: ${size}}) height!:number;
+                                    @Prop({default: '${filename}'}) title!:string;
+                                }
+                            </script> `;
             names.push(name);
             await fs.writeFile(path.join(out, `${name}.vue`), template);
         }
@@ -44,7 +47,7 @@ ${content}</template>
 
         names.forEach(name => index += `import ${name} from './dist/${name}.vue';\n`);
         index += `export { ${names.join(",\n")} }`;
-        await fs.writeFile("./index.ts", index);
+        await fs.writeFile("./index.d.ts", index);
     } catch (error) {
         console.error(error);
     }

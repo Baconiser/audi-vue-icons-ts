@@ -1,7 +1,7 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        co2-emission-small
+        {{title}}
     </title>
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <path d="M5.5,6.6 C5.5,6.6 7.4,2.5 11.5,2.5 C15.6,2.5 16.5,5.5 16.5,5.5 L19.6,5.5 C19.6,5.5 23.4,5.8 23.4,9.6 C23.4,13.4 21.4,13.6 21.4,13.6 L21.4,16.5 C21.4,18.1 20.2,19.5 18.6,19.5 C18.5,19.5 18.5,19.5 18.4,19.5 L15.3,19.5 C14.5,20.8 13.1,21.5 11.5,21.5 C9.9,21.5 8.5,20.7 7.6,19.4 C7.6,19.4 3.6,22.7 1.5,17.6 C1.5,17.6 0.9,14.6 2.6,13.5 C2.6,13.5 0.4,12.2 0.4,10.4 C0.4,8.6 0.5,6.7 5.5,6.6 L5.5,6.6 Z" stroke="currentColor"/>
@@ -9,12 +9,13 @@
     </g>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class Co2EmissionSmall extends Vue {
-		@Prop({default: 24}) width!:number;
-		@Prop({default: 24}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class Co2EmissionSmall extends Vue {
+                                    @Prop({default: 24}) width!:number;
+                                    @Prop({default: 24}) height!:number;
+                                    @Prop({default: 'co2-emission-small'}) title!:string;
+                                }
+                            </script> 

@@ -1,17 +1,18 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        skip-previous-small
+        {{title}}
     </title>
     <path d="M4.5,19 L4.5,4 L4.5,19 Z M18.5,4.4 L8.1,11.4 L18.5,18.6 L18.5,4.4 Z" stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd"/>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class SkipPreviousSmall extends Vue {
-		@Prop({default: 24}) width!:number;
-		@Prop({default: 24}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class SkipPreviousSmall extends Vue {
+                                    @Prop({default: 24}) width!:number;
+                                    @Prop({default: 24}) height!:number;
+                                    @Prop({default: 'skip-previous-small'}) title!:string;
+                                }
+                            </script> 

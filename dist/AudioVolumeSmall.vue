@@ -1,17 +1,18 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        audio-volume-small
+        {{title}}
     </title>
     <path d="M7.5,14.5 L3.5,14.5 L3.5,8.5 L7.5,8.5 L7.5,14.5 Z M7.5,14.5 L11.5,17.4 L11.5,5.6 L7.5,8.5 M17.5,17.7 C24.2,11.2 17.5,5.4 17.5,5.4 M15,15 C16.9,13 16.9,9.9 15,7.9" stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd"/>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class AudioVolumeSmall extends Vue {
-		@Prop({default: 24}) width!:number;
-		@Prop({default: 24}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class AudioVolumeSmall extends Vue {
+                                    @Prop({default: 24}) width!:number;
+                                    @Prop({default: 24}) height!:number;
+                                    @Prop({default: 'audio-volume-small'}) title!:string;
+                                }
+                            </script> 

@@ -1,7 +1,7 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        gas-station-large
+        {{title}}
     </title>
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <path d="M35.9430004,45.156 C32.6410004,45.156 30.6000004,43.427 30.6000004,40.294 C30.6000004,37.265 32.6540004,35.432 36.0080004,35.432 C37.1260004,35.432 38.5560004,35.588 39.3750004,35.939 L39.3750004,37.096 C38.4390004,36.719 37.1390004,36.576 36.2030004,36.576 C33.4730004,36.576 31.9650004,37.798 31.9650004,40.294 C31.9650004,42.998 33.6680004,44.025 36.1380004,44.025 C37.4510004,44.025 38.4000004,43.804 38.8290004,43.674 L38.8290004,40.463 L40.1550004,40.463 L40.1550004,44.558 C39.1020004,44.935 37.6850004,45.156 35.9430004,45.156 Z M18.75,45 L18.75,35.588 L20.206,35.588 L26.797,43.336 L26.797,35.588 L28.11,35.588 L28.11,45 L26.654,45 L20.063,37.265 L20.063,45 L18.75,45 Z M13.149,45.156 C10.159,45.156 7.949,43.518 7.949,40.294 C7.949,37.239 10.159,35.432 13.032,35.432 C14.059,35.432 15.177,35.588 15.996,35.939 L15.996,37.096 C15.06,36.719 14.072,36.576 13.214,36.576 C10.861,36.576 9.314,37.798 9.314,40.294 C9.314,43.076 11.277,44.025 13.175,44.025 C14.683,44.025 15.671,43.765 16.204,43.57 L16.204,44.688 C15.554,44.948 14.527,45.156 13.149,45.156 Z" fill="currentColor" fill-rule="nonzero"/>
@@ -9,12 +9,13 @@
     </g>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class GasStationLarge extends Vue {
-		@Prop({default: 48}) width!:number;
-		@Prop({default: 48}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class GasStationLarge extends Vue {
+                                    @Prop({default: 48}) width!:number;
+                                    @Prop({default: 48}) height!:number;
+                                    @Prop({default: 'gas-station-large'}) title!:string;
+                                }
+                            </script> 

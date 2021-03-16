@@ -1,17 +1,18 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        parking-large
+        {{title}}
     </title>
     <path d="M37.5,5.5 L5.5,5.5 L5.5,37.5 C5.5,40.3 7.7,42.5 10.5,42.5 L42.5,42.5 L42.5,10.5 C42.5,7.7 40.3,5.5 37.5,5.5 Z M17.5,33 L17.5,15.5 L27.5,15.5 C27.5,15.5 32.5,15.3 32.5,19.5 C32.5,24.7 30.9,26.5 27,26.5 L17.5,26.5" stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd"/>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class ParkingLarge extends Vue {
-		@Prop({default: 48}) width!:number;
-		@Prop({default: 48}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class ParkingLarge extends Vue {
+                                    @Prop({default: 48}) width!:number;
+                                    @Prop({default: 48}) height!:number;
+                                    @Prop({default: 'parking-large'}) title!:string;
+                                }
+                            </script> 

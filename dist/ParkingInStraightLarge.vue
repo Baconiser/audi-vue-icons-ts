@@ -1,17 +1,18 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        parking-in-straight-large
+        {{title}}
     </title>
     <path d="M45,10.5 L36.5,10.5 L36.5,41.5 C36.5,43.7 34.7,45.5 32.5,45.5 L16.5,45.5 C14.3,45.5 12.5,43.7 12.5,41.5 L12.5,10.5 L4,10.5 M24.5,37.5 L24.5,2 M30,32 L24.5,37.5 L19,32" stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd"/>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class ParkingInStraightLarge extends Vue {
-		@Prop({default: 48}) width!:number;
-		@Prop({default: 48}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class ParkingInStraightLarge extends Vue {
+                                    @Prop({default: 48}) width!:number;
+                                    @Prop({default: 48}) height!:number;
+                                    @Prop({default: 'parking-in-straight-large'}) title!:string;
+                                }
+                            </script> 

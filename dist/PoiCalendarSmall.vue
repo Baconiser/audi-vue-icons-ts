@@ -1,17 +1,18 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        poi-calendar-small
+        {{title}}
     </title>
     <path d="M15.5,9.5 L12.5,9.5 L12.5,12.5 M7,5.5 L16,5.5 M18.7,8.6 C18.7,4.6 15.4,1.3 11.5,1.3 C7.6,1.3 4.3,4.6 4.3,8.6 C4.3,12.6 11.5,22.7 11.5,22.7 C11.5,22.7 18.7,12.6 18.7,8.6 Z M7.5,7 L7.5,12.2 C7.5,12.4 7.8,12.5 8,12.5 L13,12.5 L15.5,10 L15.5,7" stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd"/>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class PoiCalendarSmall extends Vue {
-		@Prop({default: 24}) width!:number;
-		@Prop({default: 24}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class PoiCalendarSmall extends Vue {
+                                    @Prop({default: 24}) width!:number;
+                                    @Prop({default: 24}) height!:number;
+                                    @Prop({default: 'poi-calendar-small'}) title!:string;
+                                }
+                            </script> 

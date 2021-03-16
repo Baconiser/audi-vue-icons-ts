@@ -1,17 +1,18 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        credit-card-small
+        {{title}}
     </title>
     <path d="M2.5,4.5 L21.5,4.5 C22.0522847,4.5 22.5,4.94771525 22.5,5.5 L22.5,18.5 C22.5,19.0522847 22.0522847,19.5 21.5,19.5 L2.5,19.5 C1.94771525,19.5 1.5,19.0522847 1.5,18.5 L1.5,5.5 C1.5,4.94771525 1.94771525,4.5 2.5,4.5 Z M12,16.5 L20,16.5 M1.5,9.5 L22.5,9.5" stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd"/>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class CreditCardSmall extends Vue {
-		@Prop({default: 24}) width!:number;
-		@Prop({default: 24}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class CreditCardSmall extends Vue {
+                                    @Prop({default: 24}) width!:number;
+                                    @Prop({default: 24}) height!:number;
+                                    @Prop({default: 'credit-card-small'}) title!:string;
+                                }
+                            </script> 

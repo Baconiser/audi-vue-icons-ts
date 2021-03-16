@@ -1,17 +1,18 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        offline-maps-large
+        {{title}}
     </title>
     <path d="M30.5,29 L30.5,40.5 M36,35 L30.5,40.5 L25,35 M18.5,12 L30.5,6.5 L42.5,12 L42.5,40 M6.5,34 L6.5,6.5 L18.5,12 L18.5,40.6 L6.5,34 Z M24,43.5 L37,43.5 M30.5,21 L30.5,6.5" stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd"/>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class OfflineMapsLarge extends Vue {
-		@Prop({default: 48}) width!:number;
-		@Prop({default: 48}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class OfflineMapsLarge extends Vue {
+                                    @Prop({default: 48}) width!:number;
+                                    @Prop({default: 48}) height!:number;
+                                    @Prop({default: 'offline-maps-large'}) title!:string;
+                                }
+                            </script> 

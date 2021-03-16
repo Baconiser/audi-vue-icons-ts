@@ -1,7 +1,7 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        piloted-parking-small
+        {{title}}
     </title>
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <path d="M10.8692474,20.7659912 L13.5595398,18.0778961 M20.136772,20.7708047 L17.4355343,18.071898 L20.136772,20.7708047 Z M15.5,22.5 C19.3659932,22.5 22.5,19.3659932 22.5,15.5 C22.5,11.6340068 19.3659932,8.5 15.5,8.5 C11.6340068,8.5 8.5,11.6340068 8.5,15.5 C8.5,19.3659932 11.6340068,22.5 15.5,22.5 Z M15.5,18.8858255 C17.0779564,18.8858255 18,17.8143969 18,16.2072541 C18,15.3143969 18,14.2429684 17.2857143,13.7786829 C16.7133738,13.4066619 14.2852601,13.4075498 13.7142857,13.7786829 C13,14.2429684 13,15.3143969 13,16.2072541 C13,17.8143969 13.9220436,18.8858255 15.5,18.8858255 Z M13.1874237,14.5454545 L8.53442383,14.5454545 M22.4516754,14.5454545 L17.8398743,14.5454545" stroke="currentColor"/>
@@ -9,12 +9,13 @@
     </g>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class PilotedParkingSmall extends Vue {
-		@Prop({default: 24}) width!:number;
-		@Prop({default: 24}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class PilotedParkingSmall extends Vue {
+                                    @Prop({default: 24}) width!:number;
+                                    @Prop({default: 24}) height!:number;
+                                    @Prop({default: 'piloted-parking-small'}) title!:string;
+                                }
+                            </script> 

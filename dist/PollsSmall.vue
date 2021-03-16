@@ -1,17 +1,18 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        polls-small
+        {{title}}
     </title>
     <path d="M1,23.5 L23,23.5 L1,23.5 Z M17.5,5.5 L22.5,5.5 L22.5,20.5 L17.5,20.5 L17.5,5.5 Z M9.5,0.5 L14.5,0.5 L14.5,20.5 L9.5,20.5 L9.5,0.5 Z M1.5,9.5 L6.5,9.5 L6.5,20.5 L1.5,20.5 L1.5,9.5 Z" stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd"/>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class PollsSmall extends Vue {
-		@Prop({default: 24}) width!:number;
-		@Prop({default: 24}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class PollsSmall extends Vue {
+                                    @Prop({default: 24}) width!:number;
+                                    @Prop({default: 24}) height!:number;
+                                    @Prop({default: 'polls-small'}) title!:string;
+                                }
+                            </script> 

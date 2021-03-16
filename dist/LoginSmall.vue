@@ -1,17 +1,18 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        login-small
+        {{title}}
     </title>
     <path d="M14.8,10.5 C15.6,8.2 18.2,6.9 20.5,7.8 C22.3,8.4 23.5,10.1 23.5,12 C23.5,14.5 21.5,16.5 19,16.5 C17.1,16.5 15.4,15.3 14.8,13.5 L13.5,13.5 L11.6,14.6 L9.7,13.3 L7.7,14.6 L5.6,13.3 L3.7,14.6 L2.8,14.6 L0.8,12.5 L2.9,10.6 L14.8,10.6 L14.8,10.5 Z" stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd"/>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class LoginSmall extends Vue {
-		@Prop({default: 24}) width!:number;
-		@Prop({default: 24}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class LoginSmall extends Vue {
+                                    @Prop({default: 24}) width!:number;
+                                    @Prop({default: 24}) height!:number;
+                                    @Prop({default: 'login-small'}) title!:string;
+                                }
+                            </script> 

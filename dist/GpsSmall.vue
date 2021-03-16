@@ -1,17 +1,18 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        gps-small
+        {{title}}
     </title>
     <path d="M11.5,17 L11.5,23 L11.5,17 Z M11.5,0 L11.5,6 L11.5,0 Z M23,11.5 L17,11.5 L23,11.5 Z M6,11.5 L0,11.5 L6,11.5 Z M20.5,11.5 C20.5,16.5 16.5,20.5 11.5,20.5 C6.5,20.5 2.5,16.5 2.5,11.5 C2.5,6.5 6.5,2.5 11.5,2.5 C16.5,2.5 20.5,6.5 20.5,11.5 C20.5,11.5 20.5,11.5 20.5,11.5 Z" stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd"/>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class GpsSmall extends Vue {
-		@Prop({default: 24}) width!:number;
-		@Prop({default: 24}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class GpsSmall extends Vue {
+                                    @Prop({default: 24}) width!:number;
+                                    @Prop({default: 24}) height!:number;
+                                    @Prop({default: 'gps-small'}) title!:string;
+                                }
+                            </script> 

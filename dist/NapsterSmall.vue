@@ -1,7 +1,7 @@
 <template>
-<svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg :width="width" :height="height" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>
-        napster-small
+        {{title}}
     </title>
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <path d="M7.5,7.5 C6,6 4.5,6 4.5,6 L4.5,14 C4.5,14 5.8,19.5 11.5,19.5 C17.2,19.5 18.5,14 18.5,14 L18.5,6 C18.5,6 17,6 15.5,7.5 C15.5,7.5 13.8,6 11.5,6 C9.2,6 7.5,7.5 7.5,7.5 Z M11,15.5 L12,15.5 L11,15.5 Z M10,17.5 L13,17.5 L10,17.5 Z M6.3,6.6 L6.5,6.3 C6.5,6.3 8.1,3.5 11.5,3.5 C14.9,3.5 16.9,6.3 16.9,6.3 L17,6.4" stroke="currentColor"/>
@@ -9,12 +9,13 @@
     </g>
 </svg>
 </template>
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-	
-	@Component
-	export default class NapsterSmall extends Vue {
-		@Prop({default: 24}) width!:number;
-		@Prop({default: 24}) height!:number;
-	}
-</script> 
+                            <script lang="ts">
+                                import { Component, Prop, Vue } from "vue-property-decorator";
+                                
+                                @Component
+                                export default class NapsterSmall extends Vue {
+                                    @Prop({default: 24}) width!:number;
+                                    @Prop({default: 24}) height!:number;
+                                    @Prop({default: 'napster-small'}) title!:string;
+                                }
+                            </script> 
