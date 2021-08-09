@@ -1,10 +1,11 @@
 {
   "name": "audi-vue-icons-ts",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "Audi Icons (v.3.10.3) are sadly only available as SVGs, i converted them as vue+ts files",
   "main": "index.ts",
   "scripts": {
-    "build": "node convert.js"
+    "build": "node convert.js",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/Baconiser/audi-vue-icons-ts/issues"
   },
-  "homepage": "https://github.com/Baconiser/audi-vue-icons-ts#readme"
+  "homepage": "https://github.com/Baconiser/audi-vue-icons-ts#readme",
+  "dependencies": {
+    "@audi/audi-icon": "^3.4.0"
+  }
 }

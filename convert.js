@@ -10,11 +10,11 @@ const out = "./dist";
 function capitalize(text) {
     return [ text[0].toUpperCase(), text.substr(1, text.length) ].join("");
 }
-
+const ICON_PATH = "./node_modules/@audi/audi-icon/dist/svg/static";
 async function loadFiles() {
     let names = [];
     try {
-        const files = await fs.readdir("./svg");
+        const files = await fs.readdir(ICON_PATH);
         const svgs = files.filter(isSvg);
 
         for (var i = 0; i < svgs.length; i++) {
