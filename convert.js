@@ -50,7 +50,7 @@ async function loadFiles() {
         let index = "";
 
         names.forEach(name => index += `import ${name} from './dist/${name}.vue';\n`);
-        names.forEach(name => index += `export ${name};`);
+        index += `export { ${names.join(",\n")} }`
         await fs.writeFile("./index.d.ts", index);
     } catch (error) {
         console.error(error);

@@ -1,6 +1,6 @@
 {
   "name": "audi-vue-icons-ts",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "Audi Icons (v.3.10.3) are sadly only available as SVGs, i converted them as vue+ts files",
   "main": "index.ts",
   "scripts": {
