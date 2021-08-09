@@ -18,9 +18,9 @@ async function loadFiles() {
     try {
         const files = await fs.readdir(ICON_PATH);
         const svgs = files.filter(isSvg);
-        await new Promise((resolve => fs.mkdir("./dist", () => {
-            resolve();
-        })));
+        try {
+            await fs.mkdir("./dist");
+        }catch(e){}
         for (var i = 0; i < svgs.length; i++) {
             const file = svgs[i];
             const filename = file.replace(".svg", "");
@@ -49,11 +49,8 @@ async function loadFiles() {
         }
         let index = "";
 
-        names.forEach(name => {
-            index += `import ${name} from './dist/${name}.vue';\n`;
-        });
-        names.forEach(name => index += `export ${name};`)
-//        index += `export { ${names.join(",\n")} }`;
+        names.forEach(name => index += `import ${name} from './dist/${name}.vue';\n`);
+        names.forEach(name => index += `export ${name};`);
         await fs.writeFile("./index.d.ts", index);
     } catch (error) {
         console.error(error);
