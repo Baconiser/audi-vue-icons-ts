@@ -1,2 +1,5 @@
 .idea
 /node_modules/
+dist
+/audi-vue-icons-ts.iml
+/package-lock.json

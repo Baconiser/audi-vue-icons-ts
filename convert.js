@@ -5,16 +5,16 @@ const path = require("path");
 function isSvg(file) {
     return path.extname(file) === ".svg";
 }
-
-const OUT_FOLDER = "./src";
-let ICON_PATH = "../@audi/audi-icon/dist/svg/static";
+const SVG_FOLDER =  "@audi/audi-icon/dist/svg/static";
+const OUT_FOLDER = "./dist";
+let ICON_PATH =path.join("..", SVG_FOLDER);
 
 function capitalize(text) {
     return [ text[0].toUpperCase(), text.substr(1, text.length) ].join("");
 }
 
-if(fs.existsSync("node_modules")) {
-    ICON_PATH = "node_modules/@audi/audi-icon/dist/svg/static";
+if (fs.existsSync("node_modules")) {
+    ICON_PATH =path.join("node_modules", SVG_FOLDER);
 }
 
 async function loadFiles() {
@@ -24,7 +24,6 @@ async function loadFiles() {
         const svgs = files.filter(isSvg);
         try {
             await fsPromises.mkdir(OUT_FOLDER);
-            await fsPromises.mkdir("./dist");
         } catch (e) {
         }
         for (var i = 0; i < svgs.length; i++) {
@@ -38,26 +37,23 @@ async function loadFiles() {
             content = content.replace(`height="${size}"`, ":height=\"height\"");
             content = content.replace(filename, "{{title}}");
 
-            const template = `<template>
-${content}</template>
-<script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-
-@Component
-export default class ${name} extends Vue {
-    @Prop({default: ${size}}) width!:number;
-    @Prop({default: ${size}}) height!:number;
-    @Prop({default: '${filename}'}) title!:string;
-}
-</script>`;
+            const template =
+                `import { defineComponent } from 'vue';
+            export default defineComponent({ 
+                name:"${name}", 
+                template: \`${content}\`, props: {
+                width: {type:number, default: ${size}},
+                height: {type:number, default: ${size}},
+                filename: {type:string, default: ${size}}
+            }})`;
             names.push(name);
-            await fsPromises.writeFile(path.join(OUT_FOLDER, `${name}.vue`), template);
+            await fsPromises.writeFile(path.join(OUT_FOLDER, `${name}.ts`), template);
         }
         let index = "";
 
-        names.forEach(name => index += `import ${name} from './${OUT_FOLDER}/${name}.vue';\n`);
-        index += `export { ${names.join(",\n")} }`;
-        await fsPromises.writeFile("./index.d.ts", index);
+        names.forEach(name => index +=
+            `export {default as ${name}} from './${name}.ts';\n`);
+        await fsPromises.writeFile(path.join(OUT_FOLDER, "./index.ts"), index);
     } catch (error) {
         console.error(error);
     }

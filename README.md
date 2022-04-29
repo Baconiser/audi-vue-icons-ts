@@ -1,6 +1,6 @@
 # Audi VueTS Icons
 
-Converts SVGs from [https://www.npmjs.com/package/@audi/audi-icon](https://www.npmjs.com/package/@audi/audi-icon) to Vue Class Components in Typescript.
+Converts SVGs from [https://www.npmjs.com/package/@audi/audi-icon@3.4.0](https://www.npmjs.com/package/@audi/audi-icon) to Vue Typescript Components.
 
 ## Installation
 
