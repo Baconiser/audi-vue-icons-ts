@@ -16,8 +16,7 @@
   },
   "scripts": {
     "convert": "node convert.js",
-    "build": "npm run convert",
-    "postinstall": "npm run build"
+    "build": "npm run convert"
   },
   "repository": {
     "type": "git",
@@ -37,8 +36,7 @@
     "url": "https://github.com/Baconiser/audi-vue-icons-ts/issues"
   },
   "homepage": "https://github.com/Baconiser/audi-vue-icons-ts#readme",
-  "dependencies": {
+  "devDependencies": {
     "@audi/audi-icon": "git+https://github.com/audi/audi-icon.git"
-  },
-  "devDependencies": {}
+  }
 }

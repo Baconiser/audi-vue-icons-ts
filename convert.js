@@ -5,16 +5,17 @@ const path = require("path");
 function isSvg(file) {
     return path.extname(file) === ".svg";
 }
-const SVG_FOLDER =  "@audi/audi-icon/dist/svg/static";
+
+const SVG_FOLDER = "@audi/audi-icon/dist/svg/static";
 const OUT_FOLDER = "./dist";
-let ICON_PATH =path.join("..", SVG_FOLDER);
+let ICON_PATH = path.join("..", SVG_FOLDER);
 
 function capitalize(text) {
     return [ text[0].toUpperCase(), text.substr(1, text.length) ].join("");
 }
 
 if (fs.existsSync("node_modules")) {
-    ICON_PATH =path.join("node_modules", SVG_FOLDER);
+    ICON_PATH = path.join("node_modules", SVG_FOLDER);
 }
 
 async function loadFiles() {
@@ -41,13 +42,13 @@ async function loadFiles() {
                 `import { defineComponent } from 'vue';
             export default defineComponent({ 
                 name:"${name}", 
-                template: \`${content}\`, props: {
-                width: {type:number, default: ${size}},
-                height: {type:number, default: ${size}},
-                filename: {type:string, default: ${size}}
+                template: \`${minify(content)}\`, props: {
+                width: {type: Number, default: ${size}},
+                height: {type: Number, default: ${size}},
+                filename: {type: String, default: ${size}}
             }})`;
             names.push(name);
-            await fsPromises.writeFile(path.join(OUT_FOLDER, `${name}.ts`), template);
+            await fsPromises.writeFile(path.join(OUT_FOLDER, `${name}.ts`), minify(template));
         }
         let index = "";
 
@@ -58,6 +59,10 @@ async function loadFiles() {
         console.error(error);
     }
 
+}
+
+function minify(s) {
+    return s.replace(/\n/g, "").replace(/\s{2,}/g, "");
 }
 
 loadFiles();
