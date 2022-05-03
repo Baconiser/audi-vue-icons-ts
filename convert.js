@@ -18,7 +18,7 @@ if (fs.existsSync("node_modules")) {
     ICON_PATH = path.join("node_modules", SVG_FOLDER);
 }
 
-async function loadFiles() {
+async function convert() {
     let names = [];
     try {
         const files = await fsPromises.readdir(ICON_PATH);
@@ -36,24 +36,27 @@ async function loadFiles() {
             let content = await fsPromises.readFile(path.join(ICON_PATH, file), "utf-8");
             content = content.replace(`width="${size}"`, ":width=\"width\"");
             content = content.replace(`height="${size}"`, ":height=\"height\"");
-            content = content.replace(filename, "{{title}}");
+            content = content.replace(filename, name);
 
             const template =
-                `import { defineComponent } from 'vue';
-            export default defineComponent({ 
-                name:"${name}", 
-                template: \`${minify(content)}\`, props: {
-                width: {type: Number, default: ${size}},
-                height: {type: Number, default: ${size}},
-                filename: {type: String, default: ${size}}
-            }})`;
+                `<template>${minify(content)}</template>
+<script lang="ts">
+export default {
+  name: "${name}",
+  props: {
+    width: { type: Number, default: ${size} },
+    height: { type: Number, default: ${size} },
+    filename: { type: String, default: ${size} }
+  }
+}
+</script>`;
             names.push(name);
-            await fsPromises.writeFile(path.join(OUT_FOLDER, `${name}.ts`), minify(template));
+            await fsPromises.writeFile(path.join(OUT_FOLDER, `${name}.vue`), minify(template));
         }
         let index = "";
 
         names.forEach(name => index +=
-            `export {default as ${name}} from './${name}.ts';\n`);
+            `export {default as ${name}} from './${name}.vue';\n`);
         await fsPromises.writeFile(path.join(OUT_FOLDER, "./index.ts"), index);
     } catch (error) {
         console.error(error);
@@ -65,4 +68,4 @@ function minify(s) {
     return s.replace(/\n/g, "").replace(/\s{2,}/g, "");
 }
 
-loadFiles();
+convert();
