@@ -4,8 +4,7 @@
   "description": "Audi Icons (v.3.10.3) are sadly only available as SVGs, i converted them as vue+ts files",
   "main": "./dist/my-lib.umd.js",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "module": "./dist/my-lib.es.js",
   "exports": {
