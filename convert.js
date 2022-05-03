@@ -46,7 +46,7 @@ export default {
   props: {
     width: { type: Number, default: ${size} },
     height: { type: Number, default: ${size} },
-    title: { type: String, default: ${name} }
+    title: { type: String, default: "" }
   }
 }
 </script>`;
