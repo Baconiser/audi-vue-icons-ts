@@ -36,7 +36,7 @@ async function convert() {
             let content = await fsPromises.readFile(path.join(ICON_PATH, file), "utf-8");
             content = content.replace(`width="${size}"`, ":width=\"width\"");
             content = content.replace(`height="${size}"`, ":height=\"height\"");
-            content = content.replace(filename, name);
+            content = content.replace(filename, "{{title}}");
 
             const template =
                 `<template>${minify(content)}</template>
@@ -46,7 +46,7 @@ export default {
   props: {
     width: { type: Number, default: ${size} },
     height: { type: Number, default: ${size} },
-    filename: { type: String, default: ${size} }
+    title: { type: String, default: ${name} }
   }
 }
 </script>`;
