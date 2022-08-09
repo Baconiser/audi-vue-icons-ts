@@ -2,11 +2,11 @@
   "name": "audi-vue-icons-ts",
   "version": "1.8.2",
   "description": "Audi Icons (v.3.10.3) are sadly only available as SVGs, i converted them as vue+ts files",
-  "main": "./dist/my-lib.umd.js",
+  "main": "./dist/index.ts",
   "files": [
     "dist"
   ],
-  "module": "./dist/my-lib.es.js",
+  "module": "./dist/index.ts",
   "exports": {
     ".": {
       "import": "./dist/index.ts",
