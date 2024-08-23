@@ -1,0 +1,1 @@
+<template><svg :width="width" :height="height" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M23 23V11h1v12h12v1H24v12h-1V24H11v-1h12Z"/></svg></template><script lang="ts" setup>import { defineProps } from "vue";defineProps({width: { type: Number, default: 48 },height: { type: Number, default: 48 },title: { type: String, default: "" }});</script>

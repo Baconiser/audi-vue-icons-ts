@@ -13,6 +13,7 @@
       "require": "./dist/index.ts"
     }
   },
+  "sideEffects": false,
   "scripts": {
     "convert": "node convert.js",
     "build": "npm run convert"

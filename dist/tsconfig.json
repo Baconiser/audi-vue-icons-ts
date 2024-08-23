@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,                  // Generate .d.ts files
+    "declarationDir": "./dist",           // Output directory for .d.ts files
+    "outDir": "./dist",                   // Output directory for .js files
+    "strict": true,
+    "jsx": "preserve",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true
+  },
+  "include": ["./*.ts", "./*.vue"],       // Include all .ts and .vue files in the root
+  "exclude": ["node_modules", "dist"]     // Exclude output and dependencies
+}
